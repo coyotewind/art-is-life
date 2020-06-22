@@ -1,0 +1,336 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none !important;
+}
+
+body {
+    font-family: 'Barlow Condensed', sans-serif;
+    overflow-x: hidden;
+}
+
+#title {
+    background-color: steelblue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#title h1 {
+    font-family: 'Parisienne', sans-serif;
+    font-size: 46px;
+    line-height: 1;
+}
+
+#title h5 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#search {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 240px 240px 120px; 
+    background: #ccc;
+    border-bottom: 10px solid #444444;
+    padding: 11px 20px 20px;
+}
+
+#search fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+#search fieldset:not(:first-of-type) {
+    margin-left: 10px;
+}
+#search fieldset:last-of-type {
+    align-self: flex-end;
+}
+
+#search fieldset label {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin: 0 0 5px 2px;
+    
+}
+
+#search fieldset label span {
+    color: maroon;
+    font-size: 0.8em;
+    margin: 0 0 5px 5px;
+}
+
+#search select {
+    background: #fff;
+    font-size: 16px;
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+}
+
+#search option {
+    font-weight: normal;
+}
+
+#search input,
+#search button {
+    border-radius: 6px;
+    font-size: 16px;
+    height: 40px;
+    max-width: 800px;
+    padding: 10px;
+    width: 100%;
+}
+
+#search button {
+    background: steelblue;
+    border: 1px solid steelblue;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-family: 'Barlow Condensed',sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 7px 10px 17px;
+}
+
+#search button:hover {
+    background: maroon;
+    border: 1px solid maroon;
+    cursor: pointer;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    background: #444;
+    width: 100%;
+}
+
+#preview {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    background: #E9E9E9;
+    height: calc(100vh - 220px);
+    overflow-y: scroll;
+}
+
+#preview .pagination {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 10px;
+    padding: 20px;
+    border-bottom: 1px solid #444444;
+}
+
+.pagination button {
+    padding: 10px;
+    font-size: 16px;
+    background: steelblue;
+    border-radius: 6px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'Barlow Condensed',sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.pagination button:disabled {
+    background: #AAAAAA !important;
+    color: #ffffff;
+    cursor: default;        
+}
+
+.pagination button:hover {
+    background: maroon;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+.results .object-preview {
+    background: #FFFFFF;
+    box-shadow: 0 2px 6px -2px #666666;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.results .object-preview:not(:last-of-type) {
+    margin-bottom: 22px;
+}
+
+.results .object-preview a {
+    text-align: center;
+}
+
+.results .object-preview a:hover {
+    color: maroon;
+} 
+
+.results .object-preview img {
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.results .object-preview h3 {
+    font-size: 20px; 
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.results .object-preview h5 {
+    font-size: 20px; 
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#feature {
+    grid-column: 2;
+    grid-row: 1;
+    background: #F9F9F9;
+    display: flex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - 220px)
+}
+
+.object-feature {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 480px;
+    grid-template-rows: auto minmax(0, 1fr);
+    box-shadow: 0 2px 6px -2px #666666;
+}
+
+.object-feature > * {
+    padding: 20px 20px 24px;
+}
+
+.object-feature header {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    background: steelblue;
+    border-bottom: 1px solid black;
+    color: #FFFFFF;
+}
+
+.object-feature header h3,
+.object-feature header h5 {
+    font-family: 'Barlow Condensed';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.5px
+}
+
+.object-feature header h5 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 15px;
+    text-transform: capitalize;
+}
+
+.object-feature .facts {
+    grid-row: 2;
+    grid-column: 1;
+    overflow-y: hidden;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    display: flex;
+    flex-direction: column
+}
+
+.object-feature .facts .title {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.object-feature .facts .content {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.object-feature .facts .content a {
+    color: blue
+}
+.object-feature .facts .content a:hover {
+    color: maroon !important;
+}
+
+.object-feature .photos {
+    grid-row: 2;
+    grid-column: 2;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.object-feature .image {
+    background: #FFFFFF;
+    box-shadow: 0 2px 6px -2px #666666;
+    padding: 20px;
+}
+
+.object-feature .image:not(:last-of-type) {
+    margin-bottom: 22px;
+}
+
+.object-feature img {
+    width: 100%;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.6);
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    opacity: 1;
+    transition: all 0.5s ease;
+    visibility: visible;
+    z-index: 1;
+}
+
+#loading .message {
+    min-width: 480px;
+    padding: 3rem;
+
+    box-shadow: 0 2px 8px black;
+    background: white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loading:not(.active) {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease;
+    z-index: -1;
+}

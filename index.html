@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Colectionista de Arte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="app.js"></script>
+
+    <script>
+        $(document).scroll(function () {
+            $('body').toggleClass('sticky', $(this).scrollTop() > 119);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="app">
+        
+        <header id="title">
+            <h1>La Coleccionista de Arte</h1>
+            <h5>Busquen del Museo de Arte de Harvard</h5>
+        </header>
+
+        <form id="search">
+            <fieldset>
+                <label for="keywords">Consulta</label>
+                <input
+                    id="keywords"
+                    type="text"
+                    placeholder="Ingrese palabras claves..."
+                />
+            </fieldset>
+            <fieldset>
+                <label for="select-classification">Clasificación<span class="classification-count"></span>
+                </label>
+                <select name="classification" id="select-classification">
+                    <option value="any">Any</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="select-century">Siglo<span class="century-count"></span></label>
+                <select name="century" id="select-century">
+                    <option value="any">Any</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <button>BUSCA</button>
+            </fieldset>
+        </form>
+
+        <section id="content">
+
+            <aside id="preview">
+                <header class="pagination">
+                    <button disabled class="previous">Previo</button>
+                    <button disabled class="next">Proxima</button>
+                </header>
+                <section class="results"></section>
+            </aside>
+
+            <main id="feature"></main>
+
+        </section>
+    </div>
+    
+    <div id="loading">
+        <h2 class="message">Searching...</h2>
+    </div>
+</body>
+</html>
