@@ -279,23 +279,23 @@ function renderFeature(record) {
             <h5>${dated} Dating</h5>
         </header>
         <section class="facts">
-            ${factHTML('Culture', culture, 'culture')}
-            ${factHTML('Style', style)}
-            ${factHTML('Description', description)}
-            ${factHTML('Technique', technique, 'technique')}
-            ${factHTML('Medium', medium, 'medium')}
-            ${factHTML('Dimensions', dimensions)}
+            ${factHTML('Cultura', culture, 'culture')}
+            ${factHTML('Estilo', style)}
+            ${factHTML('Descripción', description)}
+            ${factHTML('Técnica', technique, 'technique')}
+            ${factHTML('Medio', medium, 'medium')}
+            ${factHTML('Dimensiones', dimensions)}
             ${
             people
                 ? people.map(function(person) {
-                    return factHTML('Person', person.displayname, 'person');
+                    return factHTML('Persona', person.displayname, 'person');
                     }).join('')
                 : ''
             }
-            ${factHTML('Department', department)}
-            ${factHTML('Division', division)}
-            ${factHTML('Contact', `<a target="_blank" href="mailto:${contact}">${contact}</a>`) }
-            ${factHTML('Creditline', creditline)}
+            ${factHTML('Departmento', department)}
+            ${factHTML('División', division)}
+            ${factHTML('Contacto', `<a target="_blank" href="mailto:${contact}">${contact}</a>`) }
+            ${factHTML('Línea de Crédito', creditline)}
         </section>
         <section class="photos">
             ${ photosHTML(images, primaryimageurl) }
